@@ -7,6 +7,8 @@
   --color-brand-hover: #DC571F;
   --color-brand-ink: #B4461A;   /* orange text on light surfaces, AA contrast */
   --color-brand-soft: #F5A477;
+  --color-action: #C2410C;      /* interactive elements with white text, 5.18:1 WCAG AA */
+  --color-action-hover: #9A3412; /* hover state, 7.31:1 WCAG AA */
   --color-peach: #FFE5D2;
   --color-ivory: #FFF7EF;
   --color-sand: #F9F0E8;
