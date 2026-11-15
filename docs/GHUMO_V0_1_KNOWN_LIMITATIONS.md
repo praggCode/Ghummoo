@@ -18,6 +18,7 @@
 
 | Area | Limitation |
 | --- | --- |
+| Seat holds | A traveller may have only one open booking request per departure (at most 10 seats), enforced by a unique partial index, so one account can't hold a whole departure. **Requests still never expire:** a request holds its seats until the organiser decides or the traveller cancels. Expiry needs a scheduled or lazy sweep and a maintainer decision. |
 | Image uploads | By default uploaded photos are stored on local disk (`server/uploads`, `UPLOAD_DIR`), and **on a host with an ephemeral filesystem they disappear on redeploy.** Set `UPLOAD_STORAGE=gridfs` to keep them in MongoDB instead (they then survive redeploys, but grow the database and its backups). Photos already on disk are not copied automatically; they are served as a fallback while still present. Photo URLs entered by organisers are unaffected. S3-compatible object storage could be added later as a third adapter. |
 | Declining a paid booking | An organiser can decline a booking that already has payments recorded. The note to the traveller is required, but no refund record is created. |
 | Rate limits | In-memory and per process. With more than one server instance, each instance has its own counters. |
